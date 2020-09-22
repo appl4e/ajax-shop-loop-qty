@@ -5,6 +5,12 @@
 		},
 		{
 			"path": "..\\..\\..\\wp-includes"
+		},
+		{
+			"path": "..\\woocommerce"
+		},
+		{
+			"path": "..\\..\\..\\..\\dev-plugin\\wp-content\\plugins\\teacherslist"
 		}
 	],
 	"settings": {}

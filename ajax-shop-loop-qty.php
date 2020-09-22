@@ -95,7 +95,7 @@ final class Ajax_Shop_Loop_Qty
 
   public function aslq_admin_notice_error()
   {
-?>
+  ?>
     <div class="notice notice-error is-dismissible">
       <p><?php
           printf(
@@ -107,7 +107,7 @@ final class Ajax_Shop_Loop_Qty
           );
           ?></p>
     </div>
-<?php
+  <?php
   }
 }
 

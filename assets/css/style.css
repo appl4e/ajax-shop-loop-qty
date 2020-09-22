@@ -1,0 +1,7 @@
+.aslq-qty input[type="button"]:hover {
+	text-decoration: none;
+}
+.aslq-qty .quantity {
+	display: flex;
+	margin-bottom: 20px;
+}

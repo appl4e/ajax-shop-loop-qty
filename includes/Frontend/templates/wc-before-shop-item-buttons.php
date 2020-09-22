@@ -30,7 +30,7 @@ $product = wc_get_product();
     ?>
 
       <div class="quantity_input_wrapper <?php echo esc_attr($qty_form_class); ?>" data-product-id="<?php _e($product_id); ?>" data-cart-item-key="<?php _e($this_cart_item_key); ?>" data-nonce="<?php _e($product_id_nonce); ?>">
-        <div class="testing-qty" data-p-id="<?php _e($product_id) ?>">
+        <div class="aslq-qty" data-p-id="<?php _e($product_id) ?>">
           <?php
           woocommerce_quantity_input(
             array(
