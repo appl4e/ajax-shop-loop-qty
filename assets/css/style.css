@@ -3,5 +3,12 @@
 }
 .aslq-qty .quantity {
 	display: flex;
-	margin-bottom: 20px;
+	margin-bottom: 15px;
+}
+
+.product-buttons-container.hide-add-to-cart .add_to_cart_button {
+	display: none;
+}
+.d-none {
+	display: none !important;
 }

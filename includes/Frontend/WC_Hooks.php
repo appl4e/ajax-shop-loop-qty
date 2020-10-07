@@ -17,8 +17,10 @@ class WC_Hooks
     add_action('woocommerce_after_quantity_input_field', [$this, 'aslq_quantity_plus_btn']);
   }
 
+
+
   /**
-   * Show quantity input field before add to card button in shop loop
+   * Show quantity input field and necessary elements before add to card button in shop loop
    */
   public function before_shop_item_buttons()
   {
@@ -27,6 +29,7 @@ class WC_Hooks
       include $template;
     }
   }
+
 
   /**
    * Show minus button before quantity input field
@@ -40,6 +43,6 @@ class WC_Hooks
    */
   public function aslq_quantity_plus_btn()
   {
-    echo "<input type='button' value='+' class='minus' >";
+    echo "<input type='button' value='+' class='plus' >";
   }
 }
