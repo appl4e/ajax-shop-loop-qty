@@ -9,7 +9,6 @@ jQuery(document).ready(function ($) {
 			var max = parseFloat(qty.attr("max"));
 			var min = parseFloat(qty.attr("min"));
 			var step = parseFloat(qty.attr("step"));
-			console.log(min + "," + val);
 			// Change the value if plus or minus
 			if ($(this).is(".plus")) {
 				if (max && max <= val) {
@@ -19,10 +18,8 @@ jQuery(document).ready(function ($) {
 				}
 			} else {
 				if (min && min >= val) {
-					console.log(min);
 					qty.val(min);
 				} else if (val > 0) {
-					console.log(val);
 					qty.val(val - step).trigger("change");
 				}
 			}
@@ -78,7 +75,6 @@ jQuery(document).ready(function ($) {
 				qty_value: qty_value,
 			},
 			success: function (data) {
-				console.log(data);
 				$(document.body).trigger("wc_fragment_refresh");
 				setTimeout(() => {
 					$(".post-" + data + " .product-cart-loading").removeClass("show");

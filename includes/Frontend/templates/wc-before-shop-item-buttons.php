@@ -1,6 +1,8 @@
 <?php
 ?>
-<div class="product-cart-loading"><i class="fusion-icon-spinner"></i></div>
+<div class="product-cart-loading">
+  <img src="<?php echo ASLQ_ASSETS. '/img/spinner.svg' ?>" alt="loader">
+</div>
 <?php
 global $post;
 $product = wc_get_product();
