@@ -15,6 +15,7 @@ class Installer
   public function run()
   {
     $this->add_version();
+    set_transient('aslq_show_admin_notice', true, 5);
   }
 
   public function add_version()

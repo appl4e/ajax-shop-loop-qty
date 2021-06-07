@@ -14,10 +14,15 @@ class Admin
 
   public function aslq_admin_notice_success()
   {
-  ?>
-    <div class="notice notice-success is-dismissible">
-      <p><?php _e('ASLQ Plugin Installed and Activated Successfully!', 'ajax-shop-loop-qty'); ?></p>
-    </div>
-  <?php
+    /* Check transient, if available display notice */
+    if(get_transient('aslq_show_admin_notice')){
+      ?>
+        <div class="notice notice-success is-dismissible">
+          <p><?php _e('Thank you for installing ASLQ plugin!', 'ajax-shop-loop-qty'); ?></p>
+        </div>
+      <?php
+      /* Delete transient, only display this notice once. */
+      delete_transient('aslq_show_admin_notice');
+    }
   }
 }
