@@ -96,11 +96,11 @@ jQuery(document).ready(function ($) {
 
 	$(document).on("click", ".woocommerce-mini-cart-item .remove", function(e){
 		e.preventDefault();
-		var cart_item_key = $(this).data("cart_item_key");
-		console.log(cart_item_key);
+		var cart_product_id = $(this).data("product_id");
+		console.log(cart_product_id);
 
 		$(".woocommerce .products .quantity_input_wrapper").each(function(){
-			if($(this).data("cart-item-key") == cart_item_key){
+			if($(this).data("product-id") == cart_product_id){
 				$(this).addClass("d-none");
 				$(this).parent().removeClass("hide-add-to-cart");
 			}

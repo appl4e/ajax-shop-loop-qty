@@ -28,6 +28,8 @@ $product = wc_get_product();
     }
   }
   $product_id_nonce = wp_create_nonce('wc_product_id');
+
+  echo $this_cart_item_key;
   ?>
   
   <div class="product-buttons-container clearfix <?php _e($prod_in_card_class); ?>">
