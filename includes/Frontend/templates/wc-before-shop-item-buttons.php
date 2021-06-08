@@ -40,7 +40,7 @@ $product = wc_get_product();
         <?php
         woocommerce_quantity_input(
           array(
-            'input_name'   => "cart[{$cart_item_key}][qty]",
+            'input_name'   => "cart[{$this_cart_item_key}][qty]",
             'input_value'  => $cart_quantity,
             'max_value'    => $product->get_max_purchase_quantity(),
             'min_value'    => '0',

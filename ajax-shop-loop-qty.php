@@ -2,11 +2,11 @@
 
 /**
  * Plugin Name:       Ajax Shop Loop Quantity for WooCommerce
- * Plugin URI:        https://applemahmood.com
+ * Plugin URI:        https://wordpress.org/plugins/ajax-shop-loop-quantity-for-woocommerce
  * Description:       A WordPress plugin to enable ajax quantity field in shop loop items for woocommerce.
  * Version:           1.0
  * Author:            Apple Mahmood
- * Author URI:        https://applemahmood.com
+ * Author URI:        https://www.applemahmood.com
  * License:           GPL v2 or later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       ajax-shop-loop-qty
