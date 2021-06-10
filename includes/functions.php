@@ -1,19 +1,19 @@
 <?php
 
-add_action("wp_ajax_prod_cart_update", "prod_cart_update");
-add_action("wp_ajax_nopriv_prod_cart_update", "prod_cart_update");
+add_action("wp_ajax_prod_cart_update", "aslq_prod_cart_update");
+add_action("wp_ajax_nopriv_prod_cart_update", "aslq_prod_cart_update");
 
 /**
  * updating card on product quantity change
  */
-function prod_cart_update()
+function aslq_prod_cart_update()
 {
   if (!wp_verify_nonce($_POST['nonce'], "wc_product_id")) {
     exit("No naughty business please");
   }
 
-  $product_id = $_POST["product_id"];
-  $qty_value = $_POST["qty_value"];
+  $product_id = sanitize_text_field($_POST["product_id"]);
+  $qty_value = sanitize_text_field($_POST["qty_value"]);
   
   foreach (WC()->cart->get_cart() as $existing_cart_item_key => $existing_cart_item) {
     if ($product_id == $existing_cart_item['product_id']) {
@@ -42,8 +42,8 @@ function prod_cart_update()
 }
 
 
-add_filter('woocommerce_add_to_cart_fragments', 'shop_loop_quantity_fragment');
-function shop_loop_quantity_fragment($fragments)
+add_filter('woocommerce_add_to_cart_fragments', 'aslq_shop_loop_quantity_fragment');
+function aslq_shop_loop_quantity_fragment($fragments)
 {  
   ob_start();
   $qty_type = (!empty($_POST['type']) ? filter_var($_POST['type'], FILTER_SANITIZE_STRING) : null);
@@ -61,7 +61,7 @@ function shop_loop_quantity_fragment($fragments)
   ?>
 
     <div class="aslq-qty" data-p-id="<?php _e($qty_product_id) ?>">
-      <?php      
+      <?php
       woocommerce_quantity_input(
         array(
           'input_name'   => "cart[{$qty_cart_item_key}][qty]",

@@ -1,4 +1,19 @@
 jQuery(document).ready(function ($) {
+	$(window).load(function(){
+		$(".woocommerce .product-buttons .quantity_input_wrapper .aslq-qty").each(function(){
+			$(this).find('input.minus').filter(function(index){
+				if(index === 0 ){
+					$(this).remove();
+				}
+			});
+			$(this).find('input.plus').filter(function(index){
+				if(index === 0){
+					$(this).remove();
+				}
+			});			
+		});
+		$('.woocommerce .product-buttons .quantity_input_wrapper .aslq-qty input.plus, .woocommerce .product-buttons .quantity_input_wrapper .aslq-qty input.minus').unbind("click");
+	});
 	$(document).on(
 		"click",
 		".woocommerce .product-buttons .quantity_input_wrapper .aslq-qty input.plus, .woocommerce .product-buttons .quantity_input_wrapper .aslq-qty input.minus",

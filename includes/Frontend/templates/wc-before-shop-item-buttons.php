@@ -1,7 +1,7 @@
 <?php
 ?>
 <div class="product-cart-loading">
-  <img src="<?php echo ASLQ_ASSETS. '/img/spinner.svg' ?>" alt="loader">
+  <img src="<?php echo esc_url(ASLQ_ASSETS); ?>/img/spinner.svg" alt="loader">
 </div>
 <?php
 global $post;
@@ -28,17 +28,15 @@ $product = wc_get_product();
     }
   }
   $product_id_nonce = wp_create_nonce('wc_product_id');
-
-  echo $this_cart_item_key;
   ?>
   
-  <div class="product-buttons-container clearfix <?php _e($prod_in_card_class); ?>">
+  <div class="product-buttons-container clearfix <?php esc_attr_e($prod_in_card_class); ?>">
   <?php if ($product && $product->is_type('simple') && $product->is_purchasable() && $product->is_in_stock() && !$product->is_sold_individually() && 'variable' != $product->get_type()) {
 
   ?>
 
-    <div class="quantity_input_wrapper <?php echo esc_attr($qty_form_class); ?>" data-product-id="<?php _e($product_id); ?>" data-cart-item-key="<?php _e($this_cart_item_key); ?>" data-nonce="<?php _e($product_id_nonce); ?>">
-      <div class="aslq-qty" data-p-id="<?php _e($product_id) ?>">
+    <div class="quantity_input_wrapper <?php esc_attr_e($qty_form_class); ?>" data-product-id="<?php esc_attr_e($product_id); ?>" data-cart-item-key="<?php esc_attr_e($this_cart_item_key); ?>" data-nonce="<?php esc_attr_e($product_id_nonce); ?>">
+      <div class="aslq-qty" data-p-id="<?php esc_attr_e($product_id) ?>">
         <?php
         woocommerce_quantity_input(
           array(

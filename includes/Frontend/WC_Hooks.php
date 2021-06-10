@@ -12,7 +12,7 @@ class WC_Hooks
    */
   public function __construct()
   {
-    add_action('woocommerce_after_shop_loop_item', [$this, 'before_shop_item_buttons'], 9);
+    add_action('woocommerce_after_shop_loop_item', [$this, 'aslq_before_shop_item_buttons'], 9);
     add_action('woocommerce_before_quantity_input_field', [$this, 'aslq_quantity_minus_btn']);
     add_action('woocommerce_after_quantity_input_field', [$this, 'aslq_quantity_plus_btn']);
   }
@@ -22,7 +22,7 @@ class WC_Hooks
   /**
    * Show quantity input field and necessary elements before add to card button in shop loop
    */
-  public function before_shop_item_buttons()
+  public function aslq_before_shop_item_buttons()
   {
     $template = __DIR__ . '/templates/wc-before-shop-item-buttons.php';
     if (file_exists($template)) {
