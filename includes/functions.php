@@ -4,7 +4,7 @@ add_action("wp_ajax_prod_cart_update", "aslq_prod_cart_update");
 add_action("wp_ajax_nopriv_prod_cart_update", "aslq_prod_cart_update");
 
 /**
- * updating card on product quantity change
+ * updating cart on product quantity change
  */
 function aslq_prod_cart_update()
 {
@@ -34,7 +34,7 @@ function aslq_prod_cart_update()
 
 
   if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
-    echo $product_id;
+    esc_html_e( $product_id);
   } else {
     header("Location: " . $_SERVER["HTTP_REFERER"]);
   }
